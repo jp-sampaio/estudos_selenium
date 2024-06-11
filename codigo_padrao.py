@@ -5,6 +5,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 def iniciar_driver():
@@ -23,7 +24,3 @@ def iniciar_driver():
 
     return driver
 
-driver = iniciar_driver()
-driver.get('https://google.com')
-
-input('Digite uma tecla para a automação encerrar.')
