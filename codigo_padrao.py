@@ -10,7 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def iniciar_driver():
     chrome_options = Options()
-    arguments = ['--lang=pt-BR', '--window-size=800,600', '--incognito']
+    arguments = ['--lang=pt-BR', '--window-size=1000,800', '--incognito']
     for argument in arguments:
         chrome_options.add_argument(argument)
 
@@ -20,7 +20,8 @@ def iniciar_driver():
         'profile.default_content_setting_values.automatic_downloads': 1,
     })
 
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+    # driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options) # Melhorar a peformance
 
     return driver
 
